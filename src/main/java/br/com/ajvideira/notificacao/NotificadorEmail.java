@@ -2,6 +2,7 @@ package br.com.ajvideira.notificacao;
 
 import br.com.ajvideira.model.Cliente;
 
+//@Component
 public class NotificadorEmail implements Notificador {
 
 	private boolean caixaAlta;
