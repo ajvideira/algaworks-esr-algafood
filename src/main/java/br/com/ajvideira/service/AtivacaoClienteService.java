@@ -3,14 +3,14 @@ package br.com.ajvideira.service;
 import org.springframework.stereotype.Component;
 
 import br.com.ajvideira.model.Cliente;
-import br.com.ajvideira.notificacao.NotificadorEmail;
+import br.com.ajvideira.notificacao.Notificador;
 
 @Component
 public class AtivacaoClienteService {
 
-	NotificadorEmail notificador;
+	Notificador notificador;
 	
-	public AtivacaoClienteService(NotificadorEmail notificador) {
+	public AtivacaoClienteService(Notificador notificador) {
 		this.notificador = notificador;
 		
 		System.out.println("AtivacaoClienteService: " + notificador);
