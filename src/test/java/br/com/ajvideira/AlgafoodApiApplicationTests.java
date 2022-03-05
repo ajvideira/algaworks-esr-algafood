@@ -1,10 +1,10 @@
-package br.com.ajvideira.algafood;
+package br.com.ajvideira;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AlgafoodApplicationTests {
+class AlgafoodApiApplicationTests {
 
 	@Test
 	void contextLoads() {
