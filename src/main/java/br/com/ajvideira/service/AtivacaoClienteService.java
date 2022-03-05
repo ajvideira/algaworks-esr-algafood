@@ -1,5 +1,7 @@
 package br.com.ajvideira.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -9,17 +11,13 @@ import br.com.ajvideira.notificacao.Notificador;
 @Component
 public class AtivacaoClienteService {
 
-	@Autowired(required = false)
-	private Notificador notificador;
+	@Autowired
+	private List<Notificador> notificadores;
 	
 	public void ativar(Cliente cliente) {
 		cliente.ativar();
 		
-		if (this.notificador != null) {			
-			notificador.notificar(cliente, "Seu cadastro no sistema está ativo!");
-		} else {
-			System.out.println("Não foi encontrado notificador, mas o cliente foi ativado.");
-		}
+		notificadores.forEach(notificador -> notificador.notificar(cliente, "Seu cadastro no sistema está ativo!"));
 	}
 	
 }
