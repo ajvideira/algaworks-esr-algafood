@@ -1,9 +1,11 @@
 package br.com.ajvideira.notificacao;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 import br.com.ajvideira.model.Cliente;
 
+@Primary
 @Component
 public class NotificadorSMS implements Notificador {
 
