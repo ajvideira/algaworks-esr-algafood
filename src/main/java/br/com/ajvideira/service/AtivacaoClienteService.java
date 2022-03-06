@@ -1,7 +1,6 @@
 package br.com.ajvideira.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import br.com.ajvideira.model.Cliente;
@@ -12,7 +11,7 @@ import br.com.ajvideira.notificacao.TipoDeNotificador;
 @Component
 public class AtivacaoClienteService {
 
-	@TipoDeNotificador(NivelUrgencia.URGENTE)
+	@TipoDeNotificador(NivelUrgencia.NORMAL)
 	@Autowired
 	private Notificador notificador;
 	
