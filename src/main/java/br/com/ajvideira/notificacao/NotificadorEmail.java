@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 import br.com.ajvideira.model.Cliente;
 
-@Qualifier("email")
+@TipoDeNotificador(NivelUrgencia.NORMAL)
 @Component
 public class NotificadorEmail implements Notificador {
 
