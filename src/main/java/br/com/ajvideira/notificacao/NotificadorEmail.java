@@ -1,9 +1,11 @@
 package br.com.ajvideira.notificacao;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import br.com.ajvideira.model.Cliente;
 
+@Qualifier("email")
 @Component
 public class NotificadorEmail implements Notificador {
 
