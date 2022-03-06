@@ -4,24 +4,21 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
 import br.com.ajvideira.model.Cliente;
-import br.com.ajvideira.notificacao.NivelUrgencia;
-import br.com.ajvideira.notificacao.Notificador;
-import br.com.ajvideira.notificacao.TipoDeNotificador;
 
 @Component
 public class AtivacaoClienteService {
 
-	@TipoDeNotificador(NivelUrgencia.NORMAL)
 	@Autowired
-	private Notificador notificador;
+	private ApplicationEventPublisher applicationEventPublisher;
 	
 	public void ativar(Cliente cliente) {
 		cliente.ativar();
 		
-		notificador.notificar(cliente, "Seu cadastro no sistema está ativo!");
+		applicationEventPublisher.publishEvent(new ClienteAtivadoEvent(cliente));
 	}
 	
 	@PostConstruct
