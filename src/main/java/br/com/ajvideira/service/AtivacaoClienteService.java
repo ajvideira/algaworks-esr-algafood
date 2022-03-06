@@ -1,5 +1,8 @@
 package br.com.ajvideira.service;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -19,6 +22,16 @@ public class AtivacaoClienteService {
 		cliente.ativar();
 		
 		notificador.notificar(cliente, "Seu cadastro no sistema está ativo!");
+	}
+	
+	@PostConstruct
+	public void init() {
+		System.out.println("Construindo bean");
+	}
+	
+	@PreDestroy
+	public void destroy() {
+		System.out.println("Destruindo bean");
 	}
 	
 }
